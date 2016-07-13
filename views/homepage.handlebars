@@ -30,6 +30,8 @@
               <a href="index.html" class="site_title"><i class="fa fa-paw"></i> <span>Blaze Dogger</span></a>
             </div>
 
+
+
             <div class="clearfix"></div>
 
   
@@ -67,7 +69,7 @@
           <div class="">
             <div class="page-title">
               <div class="title_left">
-                <h3>Chart Js <small>Some examples to get you started</small></h3>
+                <h3>{{mapping.mappingId}} <small>{{mapping.applicationID}}</small></h3>
               </div>
 
               <div class="title_right">
@@ -81,6 +83,13 @@
                 </div>
               </div>
             </div>
+
+
+            <!--  style="visibility: hidden" Hidden DIVS For Graphs-->
+
+            <div id="totalTasklets" style="visibility: hidden">{{mapping.totalTasklets}} </div>
+            <div id="failedTasklets" style="visibility: hidden" >{{mapping.numFailedTasklets}} </div>
+
 
             <div class="clearfix"></div>
 
@@ -189,13 +198,13 @@
       var mybarChart = new Chart(ctx, {
         type: 'bar',
         data: {
-          labels: ["January", "February", "March", "April", "May", "June", "July"],
+          labels: ["Node 1 ", "Node 2", "Node 3", "Node 4", "Node 5", "Node 6", "Node 7"],
           datasets: [{
-            label: '# of Votes',
+            label: 'Successful Tasklets',
             backgroundColor: "#26B99A",
             data: [51, 30, 40, 28, 92, 50, 45]
           }, {
-            label: '# of Votes',
+            label: 'Failed Tasklets',
             backgroundColor: "#03586A",
             data: [41, 56, 25, 48, 72, 34, 12]
           }]
@@ -216,26 +225,19 @@
       var ctx = document.getElementById("canvasDoughnut");
       var data = {
         labels: [
-          "Dark Grey",
-          "Purple Color",
-          "Gray Color",
-          "Green Color",
-          "Blue Color"
+          "Successful Tasklets",
+           "Failed Tasklets"
         ],
         datasets: [{
-          data: [120, 50, 140, 180, 100],
+          data: [8, 1],
           backgroundColor: [
-            "#455C73",
-            "#9B59B6",
-            "#BDC3C7",
-            "#26B99A",
-            "#3498DB"
+          "#36CAAB", 
+            "#03586A",
+
           ],
           hoverBackgroundColor: [
-            "#34495E",
-            "#B370CF",
-            "#CFD4D8",
             "#36CAAB",
+
             "#49A9EA"
           ]
 
@@ -282,22 +284,17 @@
       var ctx = document.getElementById("pieChart");
       var data = {
         datasets: [{
-          data: [120, 50, 140, 180, 100],
+          data: [8, 1],
           backgroundColor: [
             "#455C73",
-            "#9B59B6",
-            "#BDC3C7",
-            "#26B99A",
-            "#3498DB"
+            "#9B59B6"
           ],
           label: 'My dataset' // for legend
         }],
         labels: [
-          "Dark Gray",
-          "Purple",
-          "Gray",
-          "Green",
-          "Blue"
+          "Failed Tasklets",
+          "Successful Tasklets",
+
         ]
       };
 
@@ -309,40 +306,9 @@
         }
       });
 
-      // PolarArea chart
-      var ctx = document.getElementById("polarArea");
-      var data = {
-        datasets: [{
-          data: [120, 50, 140, 180, 100],
-          backgroundColor: [
-            "#455C73",
-            "#9B59B6",
-            "#BDC3C7",
-            "#26B99A",
-            "#3498DB"
-          ],
-          label: 'My dataset'
-        }],
-        labels: [
-          "Dark Gray",
-          "Purple",
-          "Gray",
-          "Green",
-          "Blue"
-        ]
-      };
 
-      var polarArea = new Chart(ctx, {
-        data: data,
-        type: 'polarArea',
-        options: {
-          scale: {
-            ticks: {
-              beginAtZero: true
-            }
-          }
-        }
-      });
+
+
     </script>
     <!-- /Chart.js -->
 

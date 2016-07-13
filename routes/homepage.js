@@ -1,4 +1,4 @@
-var data = require("../data.json");
+
 
 Array.prototype.remove = function(from, to) {
   var rest = this.slice((to || from) + 1 || this.length);
@@ -14,10 +14,10 @@ exports.initialize = function(req, res) { 
 	// Your code goes here
 
 	
+	var mapping = require("../Mapping1.json");
+	//console.log(mapping);
 
-
-
-	res.render('homepage');
+	res.render('homepage',{"mapping":mapping});
 
 }
 exports.addClass = function(req,res) {
