@@ -40,10 +40,13 @@
               <div class="menu_section">
                 <h3>General</h3>
                 <ul class="nav side-menu">
-                  <li><a> Mapping 1 <span></span></a>
-                  <li><a> Mapping 2 <span></span></a>
+             
 
-                  </li>
+                  {{#each mappings}}
+                  <li><a> {{name}} {{status}} <span></span></a></li>
+
+                  {{/each}}
+                  
                 </ul>
               </div>
          

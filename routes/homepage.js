@@ -1,10 +1,17 @@
 
+var data = require("../data.json");
+var log_directory = "mapping_jsons";
+
+String.prototype.endsWith = function(suffix) {
+    return this.indexOf(suffix, this.length - suffix.length) !== -1;
+};
 
 Array.prototype.remove = function(from, to) {
   var rest = this.slice((to || from) + 1 || this.length);
   this.length = from < 0 ? this.length + from : from;
   return this.push.apply(this, rest);
 };
+
 function capitalize(s)
 {
   return s[0].toUpperCase() + s.slice(1);
@@ -13,11 +20,34 @@ function capitalize(s)
 exports.initialize = function(req, res) {    
 	// Your code goes here
 
-	
 	var mapping = require("../Mapping1.json");
-	//console.log(mapping);
 
-	res.render('homepage',{"mapping":mapping});
+
+
+	var walk    = require('walk');
+	var files   = [];
+
+	// Walker options
+	var walker  = walk.walk(log_directory, { followLinks: false });
+
+	walker.on('file', function(root, stat, next) {
+	    // Add this file to the list of files
+	    var status = 0;
+	    if (stat.name.endsWith('success.json') ){
+	    	 status = 1; 
+	    }
+
+	    var object = {
+	    	name: root + '/' + stat.name,
+	    	status: status
+	    };
+
+	    files.push(object);
+	    next();
+	    console.log(files);
+	});
+	
+	res.render('homepage',{"mapping":mapping, "mappings": files});
 
 }
 exports.addClass = function(req,res) {
