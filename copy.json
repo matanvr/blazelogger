@@ -1,0 +1,179 @@
+
+{
+"classes": {
+		"previous_classes": 
+		[
+			{
+				"id": "CSE 166",
+				"name": "Image Processing",
+				"section": "7326",
+				"Term": "Fall 2013"
+			},
+			{
+				"id": "CSE 131",
+				"name": "Compiler Construction",
+				"section": "2322",
+				"Term": "Fall 2013"
+			},
+			{
+				"id": "CSE 120",
+				"name": "Principles of Computer Operating Systems",
+				"section": "5493",
+				"Term": "Summer 2013"
+			},
+			{
+				"id": "CSE 123",
+				"name": "Computer Networks",
+				"section": "7087",
+				"Term": "Summer 2013"
+			},
+			{
+				"id": "CSE 105",
+				"name": "Theory of Computability",
+				"section": "9932",
+				"Term": "Summer 2013"
+			},
+			{
+				"id": "CSE 101",
+				"name": "Design and Analysis of Algorithms",
+				"section": "5659",
+				"Term": "Spring 2013"
+
+			},
+			{
+				"id": "CSE 103",
+				"name": "A Practical Introduction to Probability and Statistics",
+				"section": "9282",
+				"Term": "Spring 2013"
+
+			},
+			{
+				"id": "CSE 118",
+				"name": "Ubiquitous Computing",
+				"section": "2839",
+				"Term": "Spring 2013"
+
+			}
+		
+	],
+		"current_classes": 
+		[
+			{
+				"id": "CSE 141",
+				"name": "Introduction to Computer Architecture",
+				"section": "2230"
+			},
+			{
+				"id": "CSE 141L",
+				"name": "Project in Computer Architecture",
+				"section": "6346"
+			},
+			{
+				"id": "CSE 170",
+				"name": "Introduction to Human-Computer Interaction",
+				"section": "9914"
+			},
+			{
+				"id": "CSE 190",
+				"name": "Topics in Computer Science and Engineering",
+				"section": "9234"
+			}
+		
+	]
+},
+"classesTaken": {
+		"fall2013": 
+		[
+			{
+				"id": "CSE 166",
+				"name": "Image Processing",
+				"section": "7326"
+				
+				
+			},
+			{
+				"id": "CSE 131",
+				"name": "Compiler Construction",
+				"section": "2322"
+			
+				
+			},
+			{
+				"id": "CSE 130",
+				"name": "Programming Languages: Principles and Paradigms",
+				"section": "2334"
+			
+				
+			}
+		],
+		"summer2013": [
+
+			{
+				"id": "CSE 120",
+				"name": "Principles of Computer Operating Systems",
+				"section": "5493"
+			
+			},
+			{
+				"id": "CSE 123",
+				"name": "Computer Networks",
+				"section": "7087"
+				
+			},
+			{
+				"id": "CSE 105",
+				"name": "Theory of Computability",
+				"section": "9932"
+			
+			}
+		],
+		"spring2013":[		
+			{
+				"id": "CSE 101",
+				"name": "Design and Analysis of Algorithms",
+				"section": "5659"
+			
+
+			},
+			{
+				"id": "CSE 103",
+				"name": "A Practical Introduction to Probability and Statistics",
+				"section": "9282"
+		
+
+			},
+			{
+				"id": "CSE 118",
+				"name": "Ubiquitous Computing",
+				"section": "2839"
+				
+
+			}
+		],
+		"winter2014": 
+		[
+			{
+				"id": "CSE 141",
+				"name": "Introduction to Computer Architecture",
+				"section": "2230"
+			},
+			{
+				"id": "CSE 141L",
+				"name": "Project in Computer Architecture",
+				"section": "6346"
+			},
+			{
+				"id": "CSE 170",
+				"name": "Introduction to Human-Computer Interaction",
+				"section": "9914"
+			},
+			{
+				"id": "CSE 190",
+				"name": "Topics in Computer Science and Engineering",
+				"section": "9234"
+			}
+		
+	]
+}
+
+}

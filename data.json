@@ -1,0 +1,806 @@
+{
+	"Students": 
+	[
+            {
+             "id": 0,
+            "firstName": "Asher",
+            "lastName": "Garland",
+            "university": "University of California, San Diego",
+            "email": "amgarlan@ucsd.edu",
+            "password": "group5",
+            "imageURL": "uploads/fullsize/0.jpg",
+            "quarters": 
+
+                {
+                    "winter2014": 
+                    [
+                        {
+                            "id": "CSE 141",
+                            "name": "Introduction to Computer Architecture",
+                            "section": "2230"
+                        },
+                        {
+                            "id": "CSE 141L",
+                            "name": "Project in Computer Architecture",
+                            "section": "6346"
+                        },
+                        {
+                            "id": "CSE 170",
+                            "name": "Introduction to Human-Computer Interaction",
+                            "section": "9914"
+                        },
+                        {
+                            "id": "CSE 190",
+                            "name": "Topics in Computer Science and Engineering",
+                            "section": "9234"
+                        }
+                    ],  
+                    "fall2013": 
+                    [
+                        {
+                            "id": "CSE 166",
+                            "name": "Image Processing",
+                            "section": "7326"
+                            
+                            
+                        },
+                        {
+                            "id": "CSE 131",
+                            "name": "Compiler Construction",
+                            "section": "2322"
+                        
+                            
+                        },
+                        {
+                            "id": "CSE 130",
+                            "name": "Programming Languages: Principles and Paradigms",
+                            "section": "2334"   
+                        }
+                    ],
+                    "summer2013": [
+
+                        {
+                            "id": "CSE 120",
+                            "name": "Principles of Computer Operating Systems",
+                            "section": "5493"
+                        
+                        },
+                        {
+                            "id": "CSE 123",
+                            "name": "Computer Networks",
+                            "section": "7087"
+                            
+                        },
+                        {
+                            "id": "CSE 105",
+                            "name": "Theory of Computability",
+                            "section": "9932"
+                        
+                        }
+                    ],
+                    "spring2013":[      
+                        {
+                            "id": "CSE 101",
+                            "name": "Design and Analysis of Algorithms",
+                            "section": "5659"
+                        
+
+                        },
+                        {
+                            "id": "CSE 103",
+                            "name": "A Practical Introduction to Probability and Statistics",
+                            "section": "9282"
+                    
+
+                        },
+                        {
+                            "id": "CSE 118",
+                            "name": "Ubiquitous Computing",
+                            "section": "2839"
+                        }
+                    ]
+                }
+            
+        },
+		{
+			"id": 1,
+			"firstName": "Matan",
+			"lastName": "Vardi",
+			"university": "University of California, San Diego",
+			"email": "mvardi@ucsd.edu",
+			"password": "group5",
+			"imageURL": "uploads/fullsize/1.jpg",
+			"quarters": 
+
+				{
+					"winter2014": 
+					[
+						{
+							"id": "CSE 124",
+							"name": "Networked Services",
+							"section": "2930"
+						},
+						{
+							"id": "CSE 125",
+							"name": "Software System Design and Implementation",
+							"section": "0923"
+						},
+						{
+							"id": "CSE 170",
+							"name": "Introduction to Human-Computer Interaction",
+							"section": "9914"
+						},
+						{
+							"id": "CSE 190",
+							"name": "Topics in Computer Science and Engineering",
+							"section": "9234"
+						}
+					],	
+					"fall2013": 
+					[
+						{
+							"id": "CSE 166",
+							"name": "Image Processing",
+							"section": "7326"
+							
+							
+						},
+						{
+							"id": "CSE 131",
+							"name": "Compiler Construction",
+							"section": "2322"
+						
+							
+						},
+						{
+							"id": "CSE 130",
+							"name": "Programming Languages: Principles and Paradigms",
+							"section": "2334"	
+						}
+					],
+					"summer2013": [
+
+						{
+							"id": "CSE 120",
+							"name": "Principles of Computer Operating Systems",
+							"section": "5493"
+						
+						},
+						{
+							"id": "CSE 123",
+							"name": "Computer Networks",
+							"section": "7087"
+							
+						},
+						{
+							"id": "CSE 105",
+							"name": "Theory of Computability",
+							"section": "9932"
+						
+						}
+					],
+					"spring2013":[		
+						{
+							"id": "CSE 101",
+							"name": "Design and Analysis of Algorithms",
+							"section": "5659"
+						
+
+						},
+						{
+							"id": "CSE 103",
+							"name": "A Practical Introduction to Probability and Statistics",
+							"section": "9282"
+					
+
+						},
+						{
+							"id": "CSE 118",
+							"name": "Ubiquitous Computing",
+							"section": "2839"
+						}
+					]
+				}
+			
+		},
+		{
+			"id": 2,
+			"firstName": "Hannah",
+			"lastName": "Thompson",
+			"university": "University of California, San Diego",
+			"email": "hnthomps@ucsd.edu",
+			"password": "group5",
+			"imageURL": "uploads/fullsize/2.jpg",
+			"quarters": 
+				{
+					"winter2014": 
+					[
+						{
+							"id": "CSE 127",
+							"name": "Introduction to Computer Secuirty",
+							"section": "0293"
+						},
+						{
+							"id": "CSE 143",
+							"name": "Microelectronic System Design",
+							"section": "6346"
+						},
+						{
+							"id": "CSE 170",
+							"name": "Introduction to Human-Computer Interaction",
+							"section": "9914"
+						},
+						{
+							"id": "CSE 190",
+							"name": "Topics in Computer Science and Engineering",
+							"section": "9234"
+						}
+					],	
+					"fall2013": 
+					[
+						{
+							"id": "CSE 166",
+							"name": "Image Processing",
+							"section": "7326"
+							
+							
+						},
+						{
+							"id": "CSE 131",
+							"name": "Compiler Construction",
+							"section": "2322"
+						
+							
+						},
+						{
+							"id": "CSE 130",
+							"name": "Programming Languages: Principles and Paradigms",
+							"section": "2334"	
+						}
+					],
+					"summer2013": [
+
+						{
+							"id": "CSE 120",
+							"name": "Principles of Computer Operating Systems",
+							"section": "5493"
+						
+						},
+						{
+							"id": "CSE 123",
+							"name": "Computer Networks",
+							"section": "7087"
+							
+						},
+						{
+							"id": "CSE 105",
+							"name": "Theory of Computability",
+							"section": "9932"
+						
+						}
+					],
+					"spring2013":[		
+						{
+							"id": "CSE 101",
+							"name": "Design and Analysis of Algorithms",
+							"section": "5659"
+						
+
+						},
+						{
+							"id": "CSE 103",
+							"name": "A Practical Introduction to Probability and Statistics",
+							"section": "9282"
+					
+
+						},
+						{
+							"id": "CSE 118",
+							"name": "Ubiquitous Computing",
+							"section": "2839"
+						}
+					]
+				}
+		},
+		{
+			"id": 3,
+			"firstName": "Elliot",
+			"lastName": "Yaghoobia",
+			"university": "University of California, San Diego",
+			"email": "eyaghoob@ucsd.edu",
+			"password": "group5",
+			"imageURL": "uploads/fullsize/3.jpg",
+			"quarters": 
+				{
+					"winter2014": 
+					[
+						{
+							"id": "COGS 187a",
+							"name": "Usability and Information Architecture",
+							"section": "0192"
+						},
+						{
+							"id": "CSE 199",
+							"name": "Independent Study for Undergraduates",
+							"section": "9230"
+						},
+						{
+							"id": "CSE 170",
+							"name": "Introduction to Human-Computer Interaction",
+							"section": "9914"
+						},
+						{
+							"id": "CSE 190",
+							"name": "Topics in Computer Science and Engineering",
+							"section": "9234"
+						}
+					],	
+					"fall2013": 
+					[
+						{
+							"id": "CSE 166",
+							"name": "Image Processing",
+							"section": "7326"
+							
+							
+						},
+						{
+							"id": "CSE 131",
+							"name": "Compiler Construction",
+							"section": "2322"
+						
+							
+						},
+						{
+							"id": "CSE 130",
+							"name": "Programming Languages: Principles and Paradigms",
+							"section": "2334"	
+						}
+					],
+					"summer2013": [
+
+						{
+							"id": "CSE 120",
+							"name": "Principles of Computer Operating Systems",
+							"section": "5493"
+						
+						},
+						{
+							"id": "CSE 123",
+							"name": "Computer Networks",
+							"section": "7087"
+							
+						},
+						{
+							"id": "CSE 105",
+							"name": "Theory of Computability",
+							"section": "9932"
+						
+						}
+					],
+					"spring2013":[		
+						{
+							"id": "CSE 101",
+							"name": "Design and Analysis of Algorithms",
+							"section": "5659"
+						
+
+						},
+						{
+							"id": "CSE 103",
+							"name": "A Practical Introduction to Probability and Statistics",
+							"section": "9282"
+					
+
+						},
+						{
+							"id": "CSE 118",
+							"name": "Ubiquitous Computing",
+							"section": "2839"
+						}
+					]
+				}
+		},
+		{
+			"id": 4,
+			"firstName": "John",
+			"lastName": "Vento",
+			"university": "University of California, San Diego",
+			"email": "jvento@ucsd.edu",
+			"password": "group5",
+			"imageURL": "uploads/fullsize/no-user.jpg",
+			"quarters": 
+
+				{
+					"winter2014": 
+					[
+						{
+							"id": "CSE 190",
+							"name": "Topics in Computer Science and Engineering",
+							"section": "9234"
+						}
+					]
+				}
+			
+		},
+		{
+			"id": 5,
+			"firstName": "Shawn",
+			"lastName": "Glazer",
+			"university": "University of California, San Diego",
+			"email": "sglazier@ucsd.edu",
+			"password": "group5",
+			"imageURL": "uploads/fullsize/no-user.jpg",
+			"quarters": 
+
+				{
+					"winter2014": 
+					[
+						{
+							"id": "CSE 190",
+							"name": "Topics in Computer Science and Engineering",
+							"section": "9234"
+						}
+					]
+				}
+			
+		},
+		{
+			"id": 6,
+			"firstName": "Adam",
+			"lastName": "Chester",
+			"university": "University of California, San Diego",
+			"email": "achester@ucsd.edu",
+			"password": "group5",
+			"imageURL": "uploads/fullsize/no-user.jpg",
+			"quarters": 
+
+				{
+					"winter2014": 
+					[
+						{
+							"id": "CSE 190",
+							"name": "Topics in Computer Science and Engineering",
+							"section": "9234"
+						}
+					]
+				}
+			
+		},
+		{
+			"id": 7,
+			"firstName": "Justin",
+			"lastName": "Lakhani",
+			"university": "University of California, San Diego",
+			"email": "lakhani@ucsd.edu",
+			"password": "group5",
+			"imageURL": "uploads/fullsize/no-user.jpg",
+			"quarters": 
+
+				{
+					"winter2014": 
+					[
+						{
+							"id": "CSE 190",
+							"name": "Topics in Computer Science and Engineering",
+							"section": "9234"
+						}
+					]
+				}
+			
+		}
+
+
+	],
+	"Classes": [
+		{
+			"id": "CSE 141",
+			"name": "Introduction to Computer Architecture",
+			"section": "2230",
+			"students": [
+				{
+					"id": 0
+				}
+			]
+		},
+		{
+			"id": "CSE 141L",
+			"name": "Project in Computer Architecture",
+			"section": "6346",
+			"students": [
+				{
+					"id": 0
+				}
+			]
+		},
+		{
+			"id": "CSE 170",
+			"name": "Introduction to Human-Computer Interaction",
+			"section": "9914",
+			"students": [
+				{
+					"id": 0
+				},
+				{
+					"id": 1
+				},
+				{
+					"id": 2
+				},
+				{
+					"id": 3
+				}
+			]
+		},
+		{
+			"id": "CSE 190",
+			"name": "Topics in Computer Science and Engineering",
+			"section": "9234",
+			"students": [
+				{
+					"id": 0
+				},
+				{
+					"id": 1
+				},
+				{
+					"id": 2
+				},
+				{
+					"id": 3
+				},
+				{
+					"id": 4
+				},
+				{
+					"id": 5
+				},
+				{
+					"id": 6
+				},
+				{
+					"id": 7
+				}
+
+			]
+		},
+		{
+			"id": "CSE 166",
+			"name": "Image Processing",
+			"section": "7326",
+			"students": [
+				{
+					"id": 0
+				},
+				{
+					"id": 1
+				},
+				{
+					"id": 2
+				},
+				{
+					"id": 3
+				}
+			]
+		},
+		{
+			"id": "CSE 131",
+			"name": "Compiler Construction",
+			"section": "2322",
+			"students": [
+				{
+					"id": 0
+				},
+				{
+					"id": 1
+				},
+				{
+					"id": 2
+				},
+				{
+					"id": 3
+				}
+			]
+		},
+		{
+			"id": "CSE 130",
+			"name": "Programming Languages: Principles and Paradigms",
+			"section": "2334",
+			"students": [
+				{
+					"id": 0
+				},
+				{
+					"id": 1
+				},
+				{
+					"id": 2
+				},
+				{
+					"id": 3
+				}
+			]	
+		},
+		{
+			"id": "CSE 120",
+			"name": "Principles of Computer Operating Systems",
+			"section": "5493",
+			"students": [
+				{
+					"id": 0
+				},
+				{
+					"id": 1
+				},
+				{
+					"id": 2
+				},
+				{
+					"id": 3
+				}
+			]
+		},
+		{
+			"id": "CSE 123",
+			"name": "Computer Networks",
+			"section": "7087",
+			"students": [
+				{
+					"id": 0
+				},
+				{
+					"id": 1
+				},
+				{
+					"id": 2
+				},
+				{
+					"id": 3
+				}
+			]
+		},
+		{
+			"id": "CSE 105",
+			"name": "Theory of Computability",
+			"section": "9932",
+			"students": [
+				{
+					"id": 0
+				},
+				{
+					"id": 1
+				},
+				{
+					"id": 2
+				},
+				{
+					"id": 3
+				}
+			]
+		},	
+		{
+			"id": "CSE 101",
+			"name": "Design and Analysis of Algorithms",
+			"section": "5659",
+			"students": [
+				{
+					"id": 0
+				},
+				{
+					"id": 1
+				},
+				{
+					"id": 2
+				},
+				{
+					"id": 3
+				}
+			]
+		},
+		{
+			"id": "CSE 103",
+			"name": "A Practical Introduction to Probability and Statistics",
+			"section": "9282",
+			"students": [
+				{
+					"id": 0
+				},
+				{
+					"id": 1
+				},
+				{
+					"id": 2
+				},
+				{
+					"id": 3
+				}
+			]
+		},
+		{
+			"id": "CSE 118",
+			"name": "Ubiquitous Computing",
+			"section": "2839",
+			"students": [
+				{
+					"id": 0
+				},
+				{
+					"id": 1
+				},
+				{
+					"id": 2
+				},
+				{
+					"id": 3
+				}
+			]
+		},
+		{
+			"id": "CSE 124",
+			"name": "Networked Services",
+			"section": "2930",
+			"students": [
+				{
+					"id": 1
+				}
+			]
+		},
+		{
+			"id": "CSE 125",
+			"name": "Software System Design and Implementation",
+			"section": "0923",
+			"students": [
+				{
+					"id": 1
+				}
+			]
+		},
+		{
+			"id": "CSE 127",
+			"name": "Introduction to Computer Secuirty",
+			"section": "0293",
+			"students": [
+				{
+					"id": 2
+				}
+			]
+		},
+		{
+			"id": "CSE 143",
+			"name": "Microelectronic System Design",
+			"section": "6346",
+			"students": [
+				{
+					"id": 2
+				}
+			]
+		},
+		{
+			"id": "COGS 187a",
+			"name": "Usability and Information Architecture",
+			"section": "0192",
+			"students": [
+				{
+					"id": 3
+				}
+			]
+		},
+		{
+			"id": "CSE 199",
+			"name": "Independent Study for Undergraduates",
+			"section": "9230",
+			"students": [
+				{
+					"id": 3
+				}
+			]
+		}
+
+	]
+
+
+}
+
+
+
+

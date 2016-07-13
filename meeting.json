@@ -1,0 +1,35 @@
+
+{
+"meetings": {
+	{
+		"id": "CSE 141",
+		"time": "3:00 pm",
+		"location": "CSE Basement"
+	},
+	{
+		"id": "CSE 141",
+		"time": "11:00 am",
+		"location": "EBU 3B 3219"
+	},
+	{
+		"id": "CSE 170",
+		"time": "1:40 pm",
+		"location": "Moxie Center"
+	},
+	{
+		"id": "CSE 170",
+		"time": "12:00 pm",
+		"location": "Moxie Center"
+	},
+	{
+		"id": "CSE 166",
+		"time": "11:30 am",
+		"location": "CSE Basement"
+	},
+	{
+		"id": "CSE 190",
+		"time": "12:00 pm",
+		"location": "EBU 3B 3219"
+	}
+
+}
