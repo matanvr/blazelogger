@@ -1,4 +1,6 @@
 var data = require("../data.json");
+var log_directory = "mapping_jsons";
+
 
 Array.prototype.remove = function(from, to) {
   var rest = this.slice((to || from) + 1 || this.length);
@@ -13,9 +15,35 @@ function capitalize(s)
 exports.initialize = function(req, res) {    
 	// Your code goes here
 
-	
+// fs = require('fs');
+// fs.readFile(log_directory, 'utf8', function (err,data) {
+//   if (err) {
+//     return console.log(err);
+//   }
+//   console.log(data);
+// });
 
 
+
+var walk    = require('walk');
+var files   = [];
+
+// Walker options
+var walker  = walk.walk(log_directory, { followLinks: false });
+
+walker.on('file', function(root, stat, next) {
+    // Add this file to the list of files
+    files.push(root + '/' + stat.name);
+    next();
+});
+
+walker.on('end', function() {
+    console.log(files);
+});
+
+
+
+   // make list of json
 
 	res.render('homepage');
 
