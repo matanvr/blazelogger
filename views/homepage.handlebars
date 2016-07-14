@@ -34,22 +34,23 @@
 
             <div class="clearfix"></div>
 
-  
+
             <!-- sidebar menu -->
             <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
               <div class="menu_section">
                 <h3>General</h3>
-                <ul class="nav side-menu">
-             
+                <button type="button" id="refresh_button"> Refresh </button>
+                <ul class="nav side-menu" id="mappings_list">
+
 
                   {{#each mappings}}
                   <li><a> {{name}} {{status}} <span></span></a></li>
 
                   {{/each}}
-                  
+
                 </ul>
               </div>
-         
+
 
             </div>
 
@@ -217,7 +218,6 @@
                   </div>
                 </div>
               </div>
-     
             </div>
           </div>
         </div>
@@ -235,8 +235,9 @@
     </div>
 
     <!-- jQuery -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
     <script src="dist/js/jquery.min.js"></script>
-
+    <script src="https://code.jquery.com/jquery.js"></script>
     <!-- FastClick -->
     <script src="dist/js/fastclick.js"></script>
     <!-- NProgress -->
@@ -297,7 +298,7 @@
         datasets: [{
           data: [8, 1],
           backgroundColor: [
-          "#36CAAB", 
+          "#36CAAB",
             "#03586A",
 
           ],
