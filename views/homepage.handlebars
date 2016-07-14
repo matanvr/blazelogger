@@ -38,8 +38,9 @@
             <!-- sidebar menu -->
             <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
               <div class="menu_section">
-                <h3>General</h3>
-                <button type="button" id="refresh_button"> Refresh </button>
+                <h3>Mappings</h3>
+    
+
                 <ul class="nav side-menu" id="mappings_list">
 
 
@@ -103,21 +104,6 @@
                 <div class="x_panel">
                   <div class="x_title">
                     <h2>Tasklet Summary<small>Sessions</small></h2>
-                    <ul class="nav navbar-right panel_toolbox">
-                      <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
-                      </li>
-                      <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
-                        <ul class="dropdown-menu" role="menu">
-                          <li><a href="#">Settings 1</a>
-                          </li>
-                          <li><a href="#">Settings 2</a>
-                          </li>
-                        </ul>
-                      </li>
-                      <li><a class="close-link"><i class="fa fa-close"></i></a>
-                      </li>
-                    </ul>
                     <div class="clearfix"></div>
                   </div>
                   <div class="x_content">
@@ -129,21 +115,7 @@
                 <div class="x_panel">
                   <div class="x_title">
                     <h2>Tasklet Execution Distributions <small>Sessions</small></h2>
-                    <ul class="nav navbar-right panel_toolbox">
-                      <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
-                      </li>
-                      <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
-                        <ul class="dropdown-menu" role="menu">
-                          <li><a href="#">Settings 1</a>
-                          </li>
-                          <li><a href="#">Settings 2</a>
-                          </li>
-                        </ul>
-                      </li>
-                      <li><a class="close-link"><i class="fa fa-close"></i></a>
-                      </li>
-                    </ul>
+
                     <div class="clearfix"></div>
                   </div>
                   <div class="x_content">
@@ -155,39 +127,19 @@
            <div class="col-md-12 col-sm-12 col-xs-12">
                 <div class="x_panel">
                   <div class="x_title">
-                    <h2>Table design <small>Custom design</small></h2>
-                    <ul class="nav navbar-right panel_toolbox">
-                      <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
-                      </li>
-                      <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
-                        <ul class="dropdown-menu" role="menu">
-                          <li><a href="#">Settings 1</a>
-                          </li>
-                          <li><a href="#">Settings 2</a>
-                          </li>
-                        </ul>
-                      </li>
-                      <li><a class="close-link"><i class="fa fa-close"></i></a>
-                      </li>
-                    </ul>
+                    <h2>Failed Tasklet logs <small>View</small></h2>
                     <div class="clearfix"></div>
                   </div>
 
                   <div class="x_content">
 
-                    <p>Add class <code>bulk_action</code> to table for bulk actions options on row select</p>
-
                     <div class="table-responsive">
                       <table class="table table-striped jambo_table bulk_action">
                         <thead>
                           <tr class="headings">
-                            <th>
-                              <input type="checkbox" id="check-all" class="flat">
-                            </th>
                             <th class="column-title">Tasklet ID </th>
                             <th class="column-title">Node</th>
-                            <th class="column-title">Log Preview</th>
+
                             <th class="column-title no-link last"><span class="nobr">Action</span>
                             </th>
                             <th class="bulk-actions" colspan="7">
@@ -197,17 +149,38 @@
                         </thead>
 
                         <tbody>
-                              {{#each mapping.failedTasklets}}
+                              {{#each mapping.tasklets}}
                      
                                   <tr class="even pointer">
-                                    <td class="a-center ">
-                                      <input type="checkbox" class="flat" name="table_records">
-                                    </td>
+
                                     <td class=" "> {{taskletID}} </td>
                                     <td class=" "> {{nodeName}} </td>
-                                   
-                                    <td > {{taskletErrors}}</td>
-                                    <td class=" last"><a href="#">View</a>
+                                    <td class=" last">
+                                          <!-- Button trigger modal -->
+                                          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal{{taskletID}}">
+                                            View Errors in Log
+                                          </button>
+
+                                          <!-- Modal -->
+                                          <div class="modal fade" id="myModal{{taskletID}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                                            <div class="modal-dialog modal-lg" role="document">
+                                              <div class="modal-content">
+                                                <div class="modal-header">
+                                                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                                  <h4 class="modal-title" id="myModalLabel">Tasklet Logs</h4>
+                                                </div>
+                                                <div class="modal-body">
+                                                  {{taskletLogFileErrors}}
+                                                </div>
+                                                <div class="modal-footer">
+
+                                                  <button type="button" class="btn btn-primary" data-dismiss="modal">Dismiss</button>
+                                                </div>
+                                              </div>
+                                            </div>
+                                          </div>
+
+
                                     </td>
                                   </tr>
 

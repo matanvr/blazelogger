@@ -127,7 +127,10 @@ function addMappingsToView(result){
 	console.log("result is " + result);
 	var html =  "";
 	result.forEach(function(value){
-		html += "<li>" + value.name + "</li>"
+		if(value.status === 1)
+		   html += "<li> <a> <i class=\"fa fa-check-circle\"></i><h4>" + value.name + "<h4></a></li>"
+	    else
+	       html += "<li> <a> <i class=\"fa fa-times-circle\"></i><h4>" + value.name + "<h4></a></li>"
 	});
 
 		$('#mappings_list').html(html);
