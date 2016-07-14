@@ -37,7 +37,20 @@
 
             <!-- sidebar menu -->
             <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+              <div class="input-group-btn select" id="select1">
+                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><span class="selected">Descending Order</span> <span class="caret"></span></button>
+                <ul class="dropdown-menu option" role="menu">
+                  <li id="1"><a href="#">Descending Order</a></li>
+                  <li id="2"><a href="#">Ascending Order</a></li>
+                  <li id="2"><a href="#">Failed Mappings</a></li>
+
+                </ul>
+              </div>
               <div class="menu_section">
+
+
+
+
                 <h3>Mappings</h3>
     
 
@@ -80,7 +93,7 @@
     
 
                 <div class="col-md-5 pull-right ">
-                    <img src="img/Informatica.png" style="width:150px;height:100px; margin-top:-20px;float:right">
+                    <img src="img/Informatica.png" style="width:150px;height:100px; float:right">
                 </div>
               </div>
             </div>
@@ -90,11 +103,6 @@
 
             <div id="successfulTasklets" style="visibility: hidden"> {{mapping.succeededTaskletCount}}</div>
             <div id="failedTasklets"  style="visibility: hidden">{{mapping.failedTaskletCount}}</div>
-
-            <div id="containerManager">
-           <!--
-   -->
-            </div>
 
 
             <div class="clearfix"></div>
@@ -140,16 +148,9 @@
                           <tr class="headings">
                             <th class="column-title">Tasklet ID </th>
                             <th class="column-title">Node</th>
-                            <th class="column-title no-link last"><span class="nobr">Container Manager Log</span>
+
+                            <th class="column-title no-link last"><span class="nobr">Action</span>
                             </th>
-                            <th class="column-title no-link last"><span class="nobr">Tasklet Error</span>
-                            </th>
-
-                            <th class="column-title no-link last"><span class="nobr">Full Log</span>
-                            </th>
-
-
-
                             <th class="bulk-actions" colspan="7">
                               <a class="antoo" style="color:#fff; font-weight:500;">Bulk Actions ( <span class="action-cnt"> </span> ) <i class="fa fa-chevron-down"></i></a>
                             </th>
@@ -165,35 +166,7 @@
                                     <td class=" "> {{nodeName}} </td>
                                     <td class=" last">
                                           <!-- Button trigger modal -->
-                                          <button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModalCM{{taskletID}}">
-                                             Container Manager Log
-                                          </button>
-
-                                          <!-- Modal -->
-                                          <div class="modal fade" id="myModalCM{{taskletID}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-                                            <div class="modal-dialog modal-lg" role="document">
-                                              <div class="modal-content">
-                                                <div class="modal-header">
-                                                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                                  <h4 class="modal-title" id="myModalLabel">Container Manager Log</h4>
-                                                </div>
-                                                <div class="modal-body">
-                                                  {{containerManagerLog}}
-                                                </div>
-                                                <div class="modal-footer">
-
-                                                  <button type="button" class="btn btn-success" data-dismiss="modal">Dismiss</button>
-                                                </div>
-                                              </div>
-                                            </div>
-                                          </div>
-
-
-                                    </td>
-
-                                    <td class=" last">
-                                          <!-- Button trigger modal -->
-                                          <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#myModal{{taskletID}}">
+                                          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal{{taskletID}}">
                                             View Errors in Log
                                           </button>
 
@@ -203,14 +176,14 @@
                                               <div class="modal-content">
                                                 <div class="modal-header">
                                                   <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                                  <h4 class="modal-title" id="myModalLabel">Tasklet Log</h4>
+                                                  <h4 class="modal-title" id="myModalLabel">Tasklet Logs</h4>
                                                 </div>
                                                 <div class="modal-body">
                                                   {{taskletLogFileErrors}}
                                                 </div>
                                                 <div class="modal-footer">
 
-                                                  <button type="button" class="btn btn-success" data-dismiss="modal">Dismiss</button>
+                                                  <button type="button" class="btn btn-primary" data-dismiss="modal">Dismiss</button>
                                                 </div>
                                               </div>
                                             </div>
@@ -218,39 +191,7 @@
 
 
                                     </td>
-
-                                    <td class=" last">
-                                          <!-- Button trigger modal -->
-                                          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModalFullLog{{taskletID}}">
-                                             Full Tasklet Log
-                                          </button>
-
-                                          <!-- Modal -->
-                                          <div class="modal fade" id="myModalFullLog{{taskletID}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-                                            <div class="modal-dialog modal-lg" role="document">
-                                              <div class="modal-content">
-                                                <div class="modal-header">
-                                                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                                  <h4 class="modal-title" id="myModalLabel">Tasklet Log</h4>
-                                                </div>
-                                                <div class="modal-body">
-                                                  {{taskletLogFileContent}}
-                                                </div>
-                                                <div class="modal-footer">
-
-                                                  <button type="button" class="btn btn-success" data-dismiss="modal">Dismiss</button>
-                                                </div>
-                                              </div>
-                                            </div>
-                                          </div>
-
-
-                                    </td>
-
-
-
                                   </tr>
-
 
                               {{/each}}
                         </tbody>
@@ -333,11 +274,95 @@
         }
       });
 
-    
-  
+      // Doughnut chart
+      var ctx = document.getElementById("canvasDoughnut");
+      var succTasklets = parseInt(document.getElementById("successfulTasklets").innerHTML);
+      var failTasklets = parseInt(document.getElementById("failedTasklets").innerHTML);
+     
+      var data = {
+        labels: [
+          "Successful Tasklets",
+           "Failed Tasklets"
+        ],
+        datasets: [{
+          data: [succTasklets, failTasklets],
+          backgroundColor: [
+          "#36CAAB",
+            "#03586A",
 
+          ],
+          hoverBackgroundColor: [
+            "#36CAAB",
 
-  
+            "#49A9EA"
+          ]
+
+        }]
+      };
+
+      var canvasDoughnut = new Chart(ctx, {
+        type: 'doughnut',
+        tooltipFillColor: "rgba(51, 51, 51, 0.55)",
+        data: data,
+        label : 'bla'
+      });
+
+      // Radar chart
+      var ctx = document.getElementById("canvasRadar");
+      var data = {
+        labels: ["Eating", "Drinking", "Sleeping", "Designing", "Coding", "Cycling", "Running"],
+        datasets: [{
+          label: "My First dataset",
+          backgroundColor: "rgba(3, 88, 106, 0.2)",
+          borderColor: "rgba(3, 88, 106, 0.80)",
+          pointBorderColor: "rgba(3, 88, 106, 0.80)",
+          pointBackgroundColor: "rgba(3, 88, 106, 0.80)",
+          pointHoverBackgroundColor: "#fff",
+          pointHoverBorderColor: "rgba(220,220,220,1)",
+          data: [65, 59, 90, 81, 56, 55, 40]
+        }, {
+          label: "My Second dataset",
+          backgroundColor: "rgba(38, 185, 154, 0.2)",
+          borderColor: "rgba(38, 185, 154, 0.85)",
+          pointColor: "rgba(38, 185, 154, 0.85)",
+          pointStrokeColor: "#fff",
+          pointHighlightFill: "#fff",
+          pointHighlightStroke: "rgba(151,187,205,1)",
+          data: [28, 48, 40, 19, 96, 27, 100]
+        }]
+      };
+
+      var canvasRadar = new Chart(ctx, {
+        type: 'radar',
+        data: data,
+      });
+
+      // Pie chart
+      var ctx = document.getElementById("pieChart");
+      var data = {
+        datasets: [{
+          data: [8, 1],
+          backgroundColor: [
+            "#455C73",
+            "#9B59B6"
+          ],
+          label: 'My dataset' // for legend
+        }],
+        labels: [
+          "Failed Tasklets",
+          "Successful Tasklets",
+
+        ]
+      };
+
+      var pieChart = new Chart(ctx, {
+        data: data,
+        type: 'pie',
+        otpions: {
+          legend: false
+        }
+      });
+
 
 
 
