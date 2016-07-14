@@ -38,11 +38,23 @@
             <!-- sidebar menu -->
             <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
               <div class="menu_section">
+
                 <h3>Mappings</h3>
-    
+                <ul>
+                  
+                    <div class="input-group-btn select" id="select1">
+                      <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><span class="selected">Descending Order</span> <span class="caret"></span></button>
+                      <ul class="dropdown-menu option" role="menu">
+                        <li id="1"><a href="#">Descending Order</a></li>
+                        <li id="2"><a href="#">Ascending Order</a></li>
+                        <li id="2"><a href="#">Failed Mappings</a></li>
 
+                      </ul>
+                    </div>
+
+                 
+                </ul>
                 <ul class="nav side-menu" id="mappings_list">
-
 
                   {{#each mappings}}
                   <li><a> {{name}} {{status}} <span></span></a></li>
@@ -91,10 +103,10 @@
             <div id="successfulTasklets" style="visibility: hidden"> {{mapping.succeededTaskletCount}}</div>
             <div id="failedTasklets"  style="visibility: hidden">{{mapping.failedTaskletCount}}</div>
 
-            <div id="containerManager">
+            <div id="containerManager" style="visibility: hidden">
          
             {{#each containerManager}}
-              <li name="{{name}}" success="{{successfulTasklets}}" fail ="{{failedTasklets}}"> </li>
+              <li name="{{name}}" success={{successfulTasklets}} fail ={{failedTasklets}}> </li>
             {{/each}}
             </div>
 
