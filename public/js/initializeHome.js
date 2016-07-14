@@ -1,32 +1,24 @@
 
-
-
-
-
-
 $(document).ready(function(event) {
-	classes = $('table.AllClasses tbody tr');
-
-	//console.log(students);
-  listMappings();
+	//window.setInterval(listMappings, 1000);
+ 	listMappings();
 
 	$('#refresh_button').click(listMappings);
-     var succTasklets = parseInt(document.getElementById("successfulTasklets").innerHTML);
-     var failTasklets = parseInt(document.getElementById("failedTasklets").innerHTML);
-     console.log(succTasklets);
-     Morris.Donut({
-          element: 'graph_donut',
-          data: [
-            {label: 'Successful Tasklets', value: succTasklets},
-            {label: 'Failed Tasklets', value: failTasklets},
+	 var succTasklets = parseInt(document.getElementById("successfulTasklets").innerHTML);
+	 var failTasklets = parseInt(document.getElementById("failedTasklets").innerHTML);
+	 Morris.Donut({
+	      element: 'graph_donut',
+	      data: [
+	        {label: 'Successful Tasklets', value: succTasklets},
+	        {label: 'Failed Tasklets', value: failTasklets},
 
-          ],
-          colors: ['#26B99A', '#34495E', '#ACADAC', '#3498DB'],
-          formatter: function (y) {
-            return y ;
-          },
-          resize: true
-        });
+	      ],
+	      colors: ['#26B99A', '#34495E', '#ACADAC', '#3498DB'],
+	      formatter: function (y) {
+	        return y ;
+	      },
+	      resize: true
+	    });
 
 
 });
@@ -46,7 +38,7 @@ function addMappingsToView(result){
 	});
     //adding clicks to class
 
-	$('#mappings_list').append(html);
+	$('#mappings_list').html(html);
 	$('.mappingClick').click(function(){
 
 		var fileName = $(this).attr('attr')

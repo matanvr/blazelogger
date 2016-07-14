@@ -12,11 +12,37 @@ String.prototype.endsWith = function(suffix) {
 exports.initialize = function(req, res) {
 	// Your code goes here
     var mapping = {}
-    console.log(req.param('mapping'));
+    //console.log(req.param('mapping'));
+    var containerManager = [];
     if(req.param('mapping')) {
 		mapping = require("../mapping_jsons/" +req.param('mapping') );
-		
+	   
+	    mapping.tasklets.forEach(function(value){
+	    	if (typeof containerManager[value.nodeName] === 'undefined' 
+	    		||  containerManager[value.nodeName] === null){
+	    		containerManager[value.nodeName] = {"name": value.nodeName,
+	    											"successfulTasklets": 0,
+	    											 "failedTasklets":  0 
+	    											};
+	    	} 
+	    	if(value.isSuccessful){
+	    		
+	    		containerManager[value.nodeName].successfulTasklets++;
+	    	} else {
+	    		containerManager[value.nodeName].failedTasklets++;
+	    	}
+	    });
 	} 
+    var cmInfo = [{}];
+    for (var value in containerManager){
+    
+    	cmInfo.push(containerManager[value]);
+    };
+    
+	mapping.containerManager = cmInfo;
+
+
+	console.log(mapping.containerManager);
 	res.render('homepage',{"mapping":mapping});
 
 }
@@ -44,11 +70,10 @@ exports.listMappings = function(req, res){
 
       files.push(object);
       next();
-      console.log("inside walker " + files);
+      
   });
 
   walker.on('end', function() {
-      console.log("End of walker " + files);
       res.json(files);
   });
 
