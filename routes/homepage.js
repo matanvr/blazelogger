@@ -25,25 +25,23 @@ exports.initialize = function(req, res) {
 	    											 "failedTasklets":  0 
 	    											};
 	    	} 
-	    	if(value.isSuccessful){
-	    		
+	    	console.log(value.successful);
+	    	if(value.successful == true){
 	    		containerManager[value.nodeName].successfulTasklets++;
 	    	} else {
 	    		containerManager[value.nodeName].failedTasklets++;
 	    	}
 	    });
 	} 
-    var cmInfo = [{}];
+    var cmInfo = [];
     for (var value in containerManager){
     
     	cmInfo.push(containerManager[value]);
     };
-    
-	mapping.containerManager = cmInfo;
 
 
-	console.log(mapping.containerManager);
-	res.render('homepage',{"mapping":mapping});
+	console.log(cmInfo);
+	res.render('homepage',{"mapping":mapping, "containerManager" : cmInfo});
 
 }
 

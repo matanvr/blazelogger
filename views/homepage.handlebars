@@ -92,8 +92,10 @@
             <div id="failedTasklets"  style="visibility: hidden">{{mapping.failedTaskletCount}}</div>
 
             <div id="containerManager">
-           <!--
-   -->
+         
+            {{#each containerManager}}
+              <li name="{{name}}" success="{{successfulTasklets}}" fail ="{{failedTasklets}}"> </li>
+            {{/each}}
             </div>
 
 
@@ -295,55 +297,6 @@
 
     <script src="dist/js/raphael.min.js"></script>
     <script src="dist/js//morris.min.js"></script>
-
-
-    <!-- Chart.js -->
-    <script>
-      Chart.defaults.global.legend = {
-        enabled: false
-      };
-
-
-
-      // Bar chart
-      var ctx = document.getElementById("mybarChart");
-      var mybarChart = new Chart(ctx, {
-        type: 'bar',
-        data: {
-          labels: ["Node 1 ", "Node 2", "Node 3", "Node 4", "Node 5", "Node 6", "Node 7"],
-          datasets: [{
-            label: 'Successful Tasklets',
-            backgroundColor: "#26B99A",
-            data: [51, 30, 40, 28, 92, 50, 45]
-          }, {
-            label: 'Failed Tasklets',
-            backgroundColor: "#03586A",
-            data: [41, 56, 25, 48, 72, 34, 12]
-          }]
-        },
-
-        options: {
-          scales: {
-            yAxes: [{
-              ticks: {
-                beginAtZero: true
-              }
-            }]
-          }
-        }
-      });
-
-    
-  
-
-
-  
-
-
-
-
-    </script>
-    <!-- /Chart.js -->
 
 
         <!-- Bootstrap core JavaScript

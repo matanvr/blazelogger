@@ -6,6 +6,7 @@ $(document).ready(function(event) {
 	$('#refresh_button').click(listMappings);
 	 var succTasklets = parseInt(document.getElementById("successfulTasklets").innerHTML);
 	 var failTasklets = parseInt(document.getElementById("failedTasklets").innerHTML);
+
 	 Morris.Donut({
 	      element: 'graph_donut',
 	      data: [
@@ -19,6 +20,50 @@ $(document).ready(function(event) {
 	      },
 	      resize: true
 	    });
+
+	       Chart.defaults.global.legend = {
+        enabled: false
+      };
+
+
+
+      // Bar chart
+      var ctx = document.getElementById("mybarChart");
+      var labels = [];
+      var succ = [];
+      var fail = [];
+      $("#containerManager li ").each(function(i,obj){
+      	labels.push($(obj).attr('name'));
+      	succ.push($(obj).attr('success'));
+      	fail.push($(obj).attr('fail'));
+      });
+
+      var mybarChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+          labels: labels,
+          datasets: [{
+            label: 'Successful Tasklets',
+            backgroundColor: "#26B99A",
+            data:succ
+          }, {
+            label: 'Failed Tasklets',
+            backgroundColor: "#03586A",
+            data: fail
+          }]
+        },
+
+        options: {
+          scales: {
+            yAxes: [{
+              ticks: {
+                beginAtZero: true
+              }
+            }]
+          }
+        }
+      });
+
 
 
 });
