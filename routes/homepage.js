@@ -1,6 +1,6 @@
 
 
-var data = require("../mapping_jsons/sqoopmapping_success.json");
+
 var log_directory = "mapping_jsons";
 
 String.prototype.endsWith = function(suffix) {
@@ -11,9 +11,13 @@ String.prototype.endsWith = function(suffix) {
 
 exports.initialize = function(req, res) {
 	// Your code goes here
-
-	var mapping = data;
-	res.render('homepage',{"mapping":mapping, "mappings": [] });
+    var mapping = {}
+    console.log(req.param('mapping'));
+    if(req.param('mapping')) {
+		mapping = require("../mapping_jsons/" +req.param('mapping') );
+		
+	} 
+	res.render('homepage',{"mapping":mapping});
 
 }
 
@@ -33,6 +37,7 @@ exports.listMappings = function(req, res){
       var fileName = stat.name.split("_");
 
       var object = {
+      	fileName:  stat.name,
         name:  fileName[0],
         status: status
       };

@@ -77,14 +77,10 @@
                 <h3>{{mapping.mappingId}} <small>{{mapping.applicationID}}</small></h3>
               </div>
 
-              <div class="title_right">
-                <div class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
-                  <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Search for...">
-                    <span class="input-group-btn">
-                      <button class="btn btn-default" type="button">Go!</button>
-                    </span>
-                  </div>
+    
+
+                <div class="col-md-5 pull-right ">
+                    <img src="img/Informatica.png" style="width:150px;height:100px; float:right">
                 </div>
               </div>
             </div>
@@ -92,8 +88,8 @@
 
             <!--  style="visibility: hidden" Hidden DIVS For Graphs-->
 
-            <div id="totalTasklets" style="visibility: hidden">{{mapping.totalTasklets}} </div>
-            <div id="failedTasklets" style="visibility: hidden" >{{mapping.numFailedTasklets}} </div>
+            <div id="successfulTasklets" style="visibility: hidden"> {{mapping.succeededTaskletCount}}</div>
+            <div id="failedTasklets"  style="visibility: hidden">{{mapping.failedTaskletCount}}</div>
 
 
             <div class="clearfix"></div>
@@ -107,7 +103,7 @@
                     <div class="clearfix"></div>
                   </div>
                   <div class="x_content">
-                    <canvas id="canvasDoughnut"></canvas>
+                     <div id="graph_donut" style="width:100%; height:300px;"></div>
                   </div>
                 </div>
               </div>
@@ -225,6 +221,10 @@
     <script src="dist/js/bootstrap.min.js"></script>
     <script src="js/initializeHome.js"></script>
 
+    <script src="dist/js/raphael.min.js"></script>
+    <script src="dist/js//morris.min.js"></script>
+
+
     <!-- Chart.js -->
     <script>
       Chart.defaults.global.legend = {
@@ -263,13 +263,16 @@
 
       // Doughnut chart
       var ctx = document.getElementById("canvasDoughnut");
+      var succTasklets = parseInt(document.getElementById("successfulTasklets").innerHTML);
+      var failTasklets = parseInt(document.getElementById("failedTasklets").innerHTML);
+     
       var data = {
         labels: [
           "Successful Tasklets",
            "Failed Tasklets"
         ],
         datasets: [{
-          data: [8, 1],
+          data: [succTasklets, failTasklets],
           backgroundColor: [
           "#36CAAB",
             "#03586A",
@@ -287,7 +290,8 @@
       var canvasDoughnut = new Chart(ctx, {
         type: 'doughnut',
         tooltipFillColor: "rgba(51, 51, 51, 0.55)",
-        data: data
+        data: data,
+        label : 'bla'
       });
 
       // Radar chart
@@ -345,6 +349,7 @@
           legend: false
         }
       });
+
 
 
 
