@@ -5,7 +5,7 @@ $('.clickable').click(function() {
 	var courseName = $(this).parent().find('td').html();
 	var className = $(this).parent().find('td').eq(1).html();
 	var sectionID = $(this).parent().find('td').eq(2).html();
-	window.location.href = "class?courseName=" + courseName + "&className=" + className 
+	window.location.href = "class?courseName=" + courseName + "&className=" + className
 	+ "&sectionID=" + sectionID;
 });
 
@@ -14,10 +14,10 @@ $('.class-click').click(function(){
 	var courseName = parentDiv.find('.info .class-id').html();
 	var className = parentDiv.find('.info .class-name').html();
 	var sectionID = parentDiv.find('.info .section').html();
-	var url = "class?courseName=" + courseName + "&className=" + className 
+	var url = "class?courseName=" + courseName + "&className=" + className
 	+ "&sectionID=" + sectionID;
 	window.location.href=url;
-	
+
 });
 
 $('.edit-toggle').click(function(){
@@ -29,10 +29,10 @@ $('.edit-toggle').click(function(){
 			var courseName = parentDiv.find('.info .class-id').html();
 			var className = parentDiv.find('.info .class-name').html();
 			var sectionID = parentDiv.find('.info .section').html();
-			var url = "class?courseName=" + courseName + "&className=" + className 
+			var url = "class?courseName=" + courseName + "&className=" + className
 			+ "&sectionID=" + sectionID;
 			window.location.href=url;
-			
+
 		});
 	}
 	else{
@@ -58,30 +58,30 @@ $('.toggle-menu').hide();
 
 
 $('.add-class').click(function(){
-	
+
 	var courseName = $(this).parent().find(".classID").eq(0).val();
 	var className = $(this).parent().find(".className").eq(0).val();
-	var sectionID = $(this).parent().find(".sectionID").eq(0).val(); 
-	var term = $(this).parent().find(".term").eq(0).val(); 
+	var sectionID = $(this).parent().find(".sectionID").eq(0).val();
+	var term = $(this).parent().find(".term").eq(0).val();
 	$(this).parent().find(".className").eq(0).val('');
-	$(this).parent().find(".sectionID").eq(0).val(''); 
+	$(this).parent().find(".sectionID").eq(0).val('');
 	$(this).parent().find(".classID").eq(0).val('');
 	$.get('./addClass?classID=' + courseName + '&className=' + className + '&sectionID=' + sectionID + '&term=' + term, addClass);
-		
+
 	var parentDiv = $(this).parent().parent().parent().parent().find('.list-group');
-    
+
     var htmlClass = "<a class='list-group-item' id='sectionID' > " +
      "<span class='pull-right'>"+
-        "<button class='btn btn-primary class-click'> View </button>" + 
+        "<button class='btn btn-primary class-click'> View </button>" +
      "</span>"+
-      "<span class='info'><h4 class='class-id'>"+courseName + "</h4> <span class='class-name'>" + className+" </span> <br> Section <span class='section'>"+ sectionID + " </span></span>" + 
+      "<span class='info'><h4 class='class-id'>"+courseName + "</h4> <span class='class-name'>" + className+" </span> <br> Section <span class='section'>"+ sectionID + " </span></span>" +
     "</a>";
 
     var htmlClass2 = "<a class='list-group-item' id='sectionID' > " +
      "<span class='pull-right'>"+
-        "<button class='btn btn-primary class-click'> View </button>" + 
+        "<button class='btn btn-primary class-click'> View </button>" +
      "</span>"+
-      "<span class='info'><h4 class='class-id'>"+courseName + "</h4> <span class='class-name'>" + className+" </span> <br> Section <span class='section'> "+ sectionID + " </span> <br><span> "+term+"</span></span>" + 
+      "<span class='info'><h4 class='class-id'>"+courseName + "</h4> <span class='class-name'>" + className+" </span> <br> Section <span class='section'> "+ sectionID + " </span> <br><span> "+term+"</span></span>" +
     "</a>";
     parentDiv.append(htmlClass);
     $("#AllClasses").append(htmlClass2);
@@ -92,10 +92,10 @@ $('.add-class').click(function(){
 		var courseName = parentDiv.find('.info .class-id').html();
 		var className = parentDiv.find('.info .class-name').html();
 		var sectionID = parentDiv.find('.info .section').html();
-		var url = "class?courseName=" + courseName + "&className=" + className 
+		var url = "class?courseName=" + courseName + "&className=" + className
 		+ "&sectionID=" + sectionID;
 		window.location.href=url;
-	
+
 	});
 
 });
@@ -112,29 +112,23 @@ function addClass(result){
 
 $(document).ready(function(event) {
 	classes = $('table.AllClasses tbody tr');
-	classes.filter = filterClasses;
+
 	//console.log(students);
+  listMappings();
 
-	$('#filter').keyup(function(e) {
-		classes.filter($('#filter').val());
-	});
+	$('#refresh_button').click(listMappings);
 });
-function filterClasses(name) {
-	name = name.toLowerCase();
-	this.each(function() {
-		var properties = $(this).find('td');
-		var header = ($(this).find('th'))[0];
-		//console.log(properties);
-		var fullname = ($(properties[0]).text() + " " + $(properties[1]).text() + " " + $(properties[2]).text() + " " + $(properties[3]).text()).toLowerCase();
-		
-		if ( fullname.search(name) == -1 && !header) {
-			console.log(header);
-			$(this).hide();
-		}
-		else {
 
-			$(this).show();
-		}
-	});
+function listMappings(){
+	$.get('./api/listMappings/', addMappingsToView);
 }
 
+function addMappingsToView(result){
+	console.log("result is " + result);
+	var html =  "";
+	result.forEach(function(value){
+		html += "<li>" + value.name + "</li>"
+	});
+
+		$('#mappings_list').html(html);
+}

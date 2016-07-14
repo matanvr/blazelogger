@@ -1,4 +1,5 @@
 
+
 var data = require("../data.json");
 var log_directory = "mapping_jsons";
 
@@ -17,39 +18,105 @@ function capitalize(s)
   return s[0].toUpperCase() + s.slice(1);
 }
 
-exports.initialize = function(req, res) {    
+exports.initialize = function(req, res) { 
 	// Your code goes here
 
 	var mapping = require("../Mapping1.json");
 
+  // require("jsdom").env("", function(err, window) {
+  // 	if (err) {
+  // 		console.error(err);
+  // 		return;
+  // 	}
+  //
+  // 	var $ = require("jquery")(window);
+  //
+  //
+  // });
 
-
-	var walk    = require('walk');
-	var files   = [];
-
-	// Walker options
-	var walker  = walk.walk(log_directory, { followLinks: false });
-
-	walker.on('file', function(root, stat, next) {
-	    // Add this file to the list of files
-	    var status = 0;
-	    if (stat.name.endsWith('success.json') ){
-	    	 status = 1; 
-	    }
-
-	    var object = {
-	    	name: root + '/' + stat.name,
-	    	status: status
-	    };
-
-	    files.push(object);
-	    next();
-	    console.log(files);
-	});
-	
-	res.render('homepage',{"mapping":mapping, "mappings": files});
+	// var walk    = require('walk');
+	// var files   = [];
+  //
+	// // Walker options
+	// var walker  = walk.walk(log_directory, { followLinks: false });
+  //
+	// walker.on('file', function(root, stat, next) {
+	//     // Add this file to the list of files
+	//     var status = 0;
+	//     if (stat.name.endsWith('success.json') ){
+	//     	 status = 1;
+	//     }
+  //
+	//     var object = {
+	//     	name: root + '/' + stat.name,
+	//     	status: status
+	//     };
+  //
+	//     files.push(object);
+	//     next();
+	//     console.log(files);
+	// });
+  //
+	res.render('homepage',{"mapping":mapping, "mappings": [] });
 
 }
+
+exports.listMappings = function(req, res){
+  var walk    = require('walk');
+  var files   = [];
+/*
+  // Walker options
+  var walker  = walk.walk(log_directory, { followLinks: false });
+
+  walker.on('file', function(root, stat, next) {
+      // Add this file to the list of files
+      var status = 0;
+      if (stat.name.endsWith('success.json') ){
+         status = 1;
+      }
+
+      var object = {
+        name: root + '/' + stat.name,
+        status: status
+      };
+
+      files.push(object);
+      next();
+      console.log("inside walker " + files);
+  });
+  console.log("files is " + files);
+  */
+  var walk    = require('walk');
+  var files   = [];
+
+  // Walker options
+  var walker  = walk.walk(log_directory, { followLinks: false });
+
+  walker.on('file', function(root, stat, next) {
+      // Add this file to the list of files
+      var status = 0;
+      if (stat.name.endsWith('success.json') ){
+         status = 1;
+      }
+
+      var object = {
+        name: root + '/' + stat.name,
+        status: status
+      };
+
+      files.push(object);
+      next();
+      console.log("inside walker " + files);
+  });
+
+  walker.on('end', function() {
+      console.log("End of walker " + files);
+      res.json(files);
+  });
+
+}
+
+
 exports.addClass = function(req,res) {
 
 
@@ -85,11 +152,11 @@ exports.addClass = function(req,res) {
 		newClass.students = [{"id": studentID}];
 		data.Classes.push(newClass);
 
-	}		
+	}
 	//console.log(data.Students[0].quarters[parameters.term]);
 	res.json({"result" : "success"});
 
-} 
+}
 
 exports.removeClass = function(req,res) {
 	var parameters = req.query;
@@ -106,7 +173,7 @@ exports.removeClass = function(req,res) {
 		var currentQuarter= data.Students[studentID].quarters[quarterName];
 		//console.log(currentQuarter);
 		for (var curCl = 0; curCl < currentQuarter.length; curCl++){
-			
+
 			currentClass = currentQuarter[curCl];
 			if(removedClass.section == currentClass.section){
 				console.log("removing" + removedClass);
@@ -119,7 +186,7 @@ exports.removeClass = function(req,res) {
 					if(data.Classes[curr].section == removedClass.section){
 						for (var i = 0; i< data.Classes[curr].students.length;i++){
 							if(studentID == data.Classes[curr].students[i].id){
-								
+
 								console.log(data.Classes[curr].students);
 								data.Classes[curr].students.remove(i);
 								console.log(data.Classes[curr].students);
@@ -128,12 +195,10 @@ exports.removeClass = function(req,res) {
 						}
 					}
 				}
-				
+
 			}
-		}	
+		}
 	}
 	return {"result" : "failed"};
 
 }
-
-

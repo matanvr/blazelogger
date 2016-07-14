@@ -46,6 +46,7 @@ if ('development' == app.get('env')) {
 
 // Add routes here
 app.get('/', homepage.initialize);
+app.get('/api/listMappings', homepage.listMappings)
 
 
 
